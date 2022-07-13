@@ -4,7 +4,7 @@ import {Link, Routes, Route} from 'react-router-dom'
 import Login from './components/Login'
 import Register from './components/Register'
 import Logout from './components/Logout'
-import MainPage from './components/MainPage'
+import Posts from './components/Posts'
 
 function App() {
   const [user,setUser] = useState({
@@ -12,7 +12,7 @@ function App() {
     password:''
 })
 
-const [tasks, setTasks] = useState([])
+const [tasks, setTasks] = useState([{id:1,post:'First'},{id:2,post:'Second'},{id:3,post:'Third'}])
 
 const onInputChange=evt=>{
     const {name, value} = evt.target
@@ -21,26 +21,27 @@ const onInputChange=evt=>{
 
 const onSubmit = evt =>{
   evt.preventDefault()
-  console.log(evt.target)
 }
   return (
     <div className="App">
         
         <div className = 'mainBanner'>
-          <div>Task Logger</div>
+          <h1>NotePad</h1>
           <nav>
             <Link to='/login' >Login</Link>
             <Link to='/register'>Register</Link>
+            <Link to='/posts'>Posts</Link>
             <Link to='/logout'>Logout</Link>
           </nav>
         </div>
        
       <Routes>
-        <Route exact path='/' element ={<MainPage/>} />
+        <Route path='/posts' element ={<Posts tasks={tasks}/>} />
         <Route path='/login' element ={<Login onInputChange = {onInputChange} onSubmit = {onSubmit}/>} />
-        <Route path='/register' element ={<Register/>} />
+        <Route path='/register' element ={<Register onInputChange = {onInputChange} onSubmit = {onSubmit} passwordCheck = {user.password}/>} />
         <Route path='/logout' element ={<Logout/>} />
       </Routes>
+      <a href='https://www.freepik.com/psd/mug-mockup'>Mug mockup psd created by rawpixel.com - www.freepik.com</a>
     </div>
   );
 }
