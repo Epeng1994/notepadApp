@@ -1,0 +1,35 @@
+*{
+  border:.5px solid red
+}
+
+.App{
+  height: 100vh;
+}
+
+.loginContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginDiv{
+  height: 40vw;
+  width: 60vw;
+  display: flex;
+  flex-flow: column;
+  text-align:center;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainBanner{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mainBanner nav{
+  width:30%;
+  display:flex;
+  justify-content: space-around;
+}
