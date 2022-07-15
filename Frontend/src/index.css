@@ -51,7 +51,7 @@ nav a{
   display:flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgb(66, 47, 12);
+  background-color: rgb(219, 164, 139);
 }
 
 .mainBanner nav{
@@ -85,6 +85,7 @@ nav a{
   align-items: center;
   flex-flow:column;
   background: url('./assets/Notebook.png') no-repeat center;
+  background-size: contain;
   height:50vw;
   margin-top: 5vw;
 }

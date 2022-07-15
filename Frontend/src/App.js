@@ -21,7 +21,17 @@ const onInputChange=evt=>{
 
 const onSubmit = evt =>{
   evt.preventDefault()
+  //axios call to login backend with user obj
+  
 }
+
+const resetUser = e=>{
+  setUser({
+    username:'', 
+    password:''
+  })
+}
+
   return (
     <div className="App">
         
@@ -37,8 +47,8 @@ const onSubmit = evt =>{
        
       <Routes>
         <Route path='/posts' element ={<Posts tasks={tasks}/>} />
-        <Route path='/login' element ={<Login onInputChange = {onInputChange} onSubmit = {onSubmit}/>} />
-        <Route path='/register' element ={<Register onInputChange = {onInputChange} onSubmit = {onSubmit} passwordCheck = {user.password}/>} />
+        <Route path='/login' element ={<Login resetUser = {resetUser} onInputChange = {onInputChange} onSubmit = {onSubmit}/>} />
+        <Route path='/register' element ={<Register resetUser = {resetUser} onInputChange = {onInputChange} onSubmit = {onSubmit} passwordCheck = {user.password}/>} />
         <Route path='/logout' element ={<Logout/>} />
       </Routes>
       <a href='https://www.freepik.com/psd/mug-mockup'>Mug mockup psd created by rawpixel.com - www.freepik.com</a>

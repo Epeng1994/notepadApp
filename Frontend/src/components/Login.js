@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 
 
@@ -8,7 +8,9 @@ function Login(props){
     const returnToRegisterPage = e =>{
         navigate('/register')
     }
-
+    useEffect(()=>{
+        props.resetUser()
+    },[])
     return(
         <div className = 'loginContainer'>
             <div className='loginDiv'>
