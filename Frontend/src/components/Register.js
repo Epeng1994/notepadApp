@@ -22,7 +22,7 @@ function Register(props){
     return(
         <div className = 'loginContainer'>
             <div className='loginDiv'>
-                <form className = 'loginForm' onSubmit = {props.onSubmit}>
+                <form className = 'loginForm' name = 'login' onSubmit = {props.onSubmit}>
                     <h2>Register</h2>
                     <div className = 'formEntry'>
                         <input name = 'username' type='text' placeholder ='Enter your username' onChange = {props.onInputChange}></input>

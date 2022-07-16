@@ -5,6 +5,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import Logout from './components/Logout'
 import Posts from './components/Posts'
+import {registerNewUser} from './axios/registerRequest'
 
 function App() {
   const [user,setUser] = useState({
@@ -21,8 +22,11 @@ const onInputChange=evt=>{
 
 const onSubmit = evt =>{
   evt.preventDefault()
+  const {name}  = evt.target
   //axios call to login backend with user obj
-  
+  //Login axios
+  //Register axios
+  name === 'register' ? registerNewUser(user) : console.log('login')
 }
 
 const resetUser = e=>{
