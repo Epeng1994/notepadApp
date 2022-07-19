@@ -5,7 +5,8 @@ import Login from './components/Login'
 import Register from './components/Register'
 import Logout from './components/Logout'
 import Posts from './components/Posts'
-import {registerNewUser} from './axios/registerRequest'
+import {registerNewUser, loginRequest} from './axios/register'
+
 
 function App() {
   const [user,setUser] = useState({
